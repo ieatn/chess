@@ -15,6 +15,9 @@ const pieces: Piece[] = []
 for (let i = 0; i < 8; i++) {
     pieces.push({ image: 'images/pawn_b.png', x: i, y: 6 })
 }
+for (let i = 0; i < 8; i++) {
+    pieces.push({ image: 'images/pawn_w.png', x: i, y: 1 })
+}
 
 export default function Chessboard() {
     let board = [];
