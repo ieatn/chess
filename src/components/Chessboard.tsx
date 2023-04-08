@@ -11,21 +11,26 @@ interface Piece {
     y: number
 }
 const pieces: Piece[] = []
-pieces.push({ image:'images/pawn_b.png', x: 0, y: 1 })
+
+for (let i = 0; i < 8; i++) {
+    pieces.push({ image: 'images/pawn_b.png', x: i, y: 6 })
+}
 
 export default function Chessboard() {
+    let board = [];
+  
+    for (let j = verticalAxis.length - 1; j >= 0; j--) {
+        for (let i = 0; i < horizontalAxis.length; i++) {
+            const number = j + i + 2;
+            let image = undefined;
 
-    let board = []
-    for (let i = 0; i < horizontalAxis.length; i++) {
-        for (let j  = 0; j < verticalAxis.length; j++) {
-            
-            const number = j + i + 2
-            // console.log(i, j)
-            // if (i == 0 && j == 1) {
+            pieces.forEach((p) => {
+                if (p.x === i && p.y === j) {
+                image = p.image;
+                }
+            });
 
-            //     board.push(<Tile number={number} image={pieces[0].image} />)
-            // }
-            board.push(<Tile number={number} image={pieces[0].image} />)
+            board.push(<Tile image={image} number={number} />);
         }
     }
     
