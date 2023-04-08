@@ -12,21 +12,33 @@ interface Piece {
 }
 const pieces: Piece[] = []
 
+// black pawns
 for (let i = 0; i < 8; i++) {
     pieces.push({ image: 'images/pawn_b.png', x: i, y: 6 })
 }
+
+// white pawns
 for (let i = 0; i < 8; i++) {
     pieces.push({ image: 'images/pawn_w.png', x: i, y: 1 })
 }
 
-pieces.push({ image: `images/rook_b.png`, x: 0, y: 7 });
-pieces.push({ image: `images/rook_b.png`, x: 7, y: 7 });
-pieces.push({ image: `images/knight_b.png`, x: 1, y: 7 });
-pieces.push({ image: `images/knight_b.png`, x: 6, y: 7 });
-pieces.push({ image: `images/bishop_b.png`, x: 2, y: 7 });
-pieces.push({ image: `images/bishop_b.png`, x: 5, y: 7 });
-pieces.push({ image: `images/queen_b.png`, x: 3, y: 7 });
-pieces.push({ image: `images/king_b.png`, x: 4, y: 7 });
+// do one loop for all black pieces, then for second
+for (let i = 0; i < 2; i++) {
+    // first iteration will be black, second will be white
+    const color = (i === 0) ? 'b' : 'w'
+    // black is 7, white is 0
+    const y = (i === 0) ? 7 : 0
+    pieces.push({ image: `images/rook_${color}.png`, x: 0, y: y });
+    pieces.push({ image: `images/rook_${color}.png`, x: 7, y: y });
+    pieces.push({ image: `images/knight_${color}.png`, x: 1, y: y });
+    pieces.push({ image: `images/knight_${color}.png`, x: 6, y: y });
+    pieces.push({ image: `images/bishop_${color}.png`, x: 2, y: y });
+    pieces.push({ image: `images/bishop_${color}.png`, x: 5, y: y });
+    pieces.push({ image: `images/queen_${color}.png`, x: 3, y: y });
+    pieces.push({ image: `images/king_${color}.png`, x: 4, y: y });
+}
+
+
 
 pieces.push({ image: `images/rook_w.png`, x: 0, y: 0 });
 pieces.push({ image: `images/rook_w.png`, x: 7, y: 0 });
