@@ -38,17 +38,6 @@ for (let i = 0; i < 2; i++) {
     pieces.push({ image: `images/king_${color}.png`, x: 4, y: y });
 }
 
-
-
-pieces.push({ image: `images/rook_w.png`, x: 0, y: 0 });
-pieces.push({ image: `images/rook_w.png`, x: 7, y: 0 });
-pieces.push({ image: `images/knight_w.png`, x: 1, y: 0 });
-pieces.push({ image: `images/knight_w.png`, x: 6, y: 0 });
-pieces.push({ image: `images/bishop_w.png`, x: 2, y: 0 });
-pieces.push({ image: `images/bishop_w.png`, x: 5, y: 0 });
-pieces.push({ image: `images/queen_w.png`, x: 3, y: 0 });
-pieces.push({ image: `images/king_w.png`, x: 4, y: 0 });
-
 export default function Chessboard() {
     let board = [];
   
